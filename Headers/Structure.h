@@ -8,10 +8,22 @@
 struct pile{
     int data[100];
     int top;
+    int len;
 };
 
 void stack(struct pile P, int x);
 
 int depilate(struct pile P);
+
+struct queue{
+    int data[100];
+    int top;
+    int bottom;
+    int len;
+};
+
+void enqueue(struct queue Q, int x);
+
+int dequeue(struct queue Q);
 
 #endif //ALGO_STRUCTURE_H
