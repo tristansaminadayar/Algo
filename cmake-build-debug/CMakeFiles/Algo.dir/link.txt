@@ -1,2 +1,0 @@
-C:\MinGW\bin\ar.exe qc libAlgo.a  CMakeFiles/Algo.dir/Sources/Sort.c.obj CMakeFiles/Algo.dir/Sources/Structure.c.obj
-C:\MinGW\bin\ranlib.exe libAlgo.a

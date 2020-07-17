@@ -11,6 +11,8 @@ struct pile{
     int len;
 };
 
+struct pile create_pile();
+
 void stack(struct pile P, int x);
 
 int depilate(struct pile P);
@@ -25,5 +27,7 @@ struct queue{
 void enqueue(struct queue Q, int x);
 
 int dequeue(struct queue Q);
+
+struct queue create_queue();
 
 #endif //ALGO_STRUCTURE_H

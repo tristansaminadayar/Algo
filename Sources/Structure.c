@@ -27,6 +27,11 @@ int depilate(struct pile P) {
     }
 }
 
+struct pile create_pile() {
+    struct pile P = {.top = 0, .len = 100};
+    return P;
+}
+
 // Implementation de la file (FIFO)
 
 void enqueue(struct queue Q, int x) {
@@ -40,4 +45,9 @@ int dequeue(struct queue Q) {
     if (Q.top == Q.len) Q.top = 1;
     else Q.top++;
     return x;
+}
+
+struct queue create_queue() {
+    struct queue Q = {.top = 0, .bottom = 0, .len = 100};
+    return Q;
 }
