@@ -55,4 +55,41 @@ void chained_list_insert(struct chained_list L, struct link x);
 
 void chained_list_delete(struct chained_list L, struct link x);
 
+// Implementation des arbres rouge-noir
+
+struct node {
+    char color;
+    int key;
+    struct node *p;
+    struct node *left;
+    struct node *right;
+};
+
+struct tree {
+    struct node *nil;
+    struct node *root;
+};
+
+struct tree create_tree();
+
+void left_rotate(struct tree T, struct node *x);
+
+void right_rotate(struct tree T, struct node *x);
+
+struct node * minimum(struct node * x);
+
+struct node * maximum(struct node * x);
+
+void tree_insert(struct tree T, struct node *z);
+
+void correct_insert(struct tree T, struct node *z);
+
+void transplant(struct tree T, struct node *u, struct node *v);
+
+void delete(struct tree T, struct node *z);
+
+void correct_delete(struct tree T, struct node * x);
+
+struct node *search(struct node *x, int k);
+
 #endif //ALGO_STRUCTURE_H

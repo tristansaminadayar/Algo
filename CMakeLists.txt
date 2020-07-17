@@ -4,3 +4,4 @@ project(Algo C)
 set(CMAKE_C_STANDARD 11)
 
 add_library(Algo Sources/Sort.c Headers/Sort.h Sources/Structure.c Headers/Structure.h)
+add_executable(Tests Tests/Tests.c Headers/Sort.h Sources/Sort.c)
