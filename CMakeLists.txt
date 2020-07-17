@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(Algo C)
+
+set(CMAKE_C_STANDARD 99)
+
+add_library(Algo Sources/Sort.c Headers/Sort.h Sources/Structures.c)

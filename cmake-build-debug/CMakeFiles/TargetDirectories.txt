@@ -1,0 +1,3 @@
+C:/Users/trist/Documents/Perso/Informatique/C/Algo/cmake-build-debug/CMakeFiles/Algo.dir
+C:/Users/trist/Documents/Perso/Informatique/C/Algo/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/trist/Documents/Perso/Informatique/C/Algo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
