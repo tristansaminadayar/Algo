@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Algo.dir/Sources/Sort.c.obj"
-  "CMakeFiles/Algo.dir/Sources/Structures.c.obj"
+  "CMakeFiles/Algo.dir/Sources/Structure.c.obj"
   "libAlgo.a"
   "libAlgo.pdb"
 )

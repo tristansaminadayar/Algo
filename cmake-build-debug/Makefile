@@ -149,32 +149,32 @@ Sources/Sort.c.s:
 	$(MAKE) -f CMakeFiles\Algo.dir\build.make CMakeFiles/Algo.dir/Sources/Sort.c.s
 .PHONY : Sources/Sort.c.s
 
-Sources/Structures.obj: Sources/Structures.c.obj
+Sources/Structure.obj: Sources/Structure.c.obj
 
-.PHONY : Sources/Structures.obj
+.PHONY : Sources/Structure.obj
 
 # target to build an object file
-Sources/Structures.c.obj:
-	$(MAKE) -f CMakeFiles\Algo.dir\build.make CMakeFiles/Algo.dir/Sources/Structures.c.obj
-.PHONY : Sources/Structures.c.obj
+Sources/Structure.c.obj:
+	$(MAKE) -f CMakeFiles\Algo.dir\build.make CMakeFiles/Algo.dir/Sources/Structure.c.obj
+.PHONY : Sources/Structure.c.obj
 
-Sources/Structures.i: Sources/Structures.c.i
+Sources/Structure.i: Sources/Structure.c.i
 
-.PHONY : Sources/Structures.i
+.PHONY : Sources/Structure.i
 
 # target to preprocess a source file
-Sources/Structures.c.i:
-	$(MAKE) -f CMakeFiles\Algo.dir\build.make CMakeFiles/Algo.dir/Sources/Structures.c.i
-.PHONY : Sources/Structures.c.i
+Sources/Structure.c.i:
+	$(MAKE) -f CMakeFiles\Algo.dir\build.make CMakeFiles/Algo.dir/Sources/Structure.c.i
+.PHONY : Sources/Structure.c.i
 
-Sources/Structures.s: Sources/Structures.c.s
+Sources/Structure.s: Sources/Structure.c.s
 
-.PHONY : Sources/Structures.s
+.PHONY : Sources/Structure.s
 
 # target to generate assembly for a file
-Sources/Structures.c.s:
-	$(MAKE) -f CMakeFiles\Algo.dir\build.make CMakeFiles/Algo.dir/Sources/Structures.c.s
-.PHONY : Sources/Structures.c.s
+Sources/Structure.c.s:
+	$(MAKE) -f CMakeFiles\Algo.dir\build.make CMakeFiles/Algo.dir/Sources/Structure.c.s
+.PHONY : Sources/Structure.c.s
 
 # Help Target
 help:
@@ -188,9 +188,9 @@ help:
 	@echo ... Sources/Sort.obj
 	@echo ... Sources/Sort.i
 	@echo ... Sources/Sort.s
-	@echo ... Sources/Structures.obj
-	@echo ... Sources/Structures.i
-	@echo ... Sources/Structures.s
+	@echo ... Sources/Structure.obj
+	@echo ... Sources/Structure.i
+	@echo ... Sources/Structure.s
 .PHONY : help
 
 

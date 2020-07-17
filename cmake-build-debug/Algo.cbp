@@ -77,10 +77,13 @@
 		<Unit filename="C:/Users/trist/Documents/Perso/Informatique/C/Algo/Headers/Sort.h">
 			<Option target="Algo"/>
 		</Unit>
+		<Unit filename="C:/Users/trist/Documents/Perso/Informatique/C/Algo/Headers/Structure.h">
+			<Option target="Algo"/>
+		</Unit>
 		<Unit filename="C:/Users/trist/Documents/Perso/Informatique/C/Algo/Sources/Sort.c">
 			<Option target="Algo"/>
 		</Unit>
-		<Unit filename="C:/Users/trist/Documents/Perso/Informatique/C/Algo/Sources/Structures.c">
+		<Unit filename="C:/Users/trist/Documents/Perso/Informatique/C/Algo/Sources/Structure.c">
 			<Option target="Algo"/>
 		</Unit>
 		<Unit filename="C:/Users/trist/Documents/Perso/Informatique/C/Algo/CMakeLists.txt">

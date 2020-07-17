@@ -69,29 +69,29 @@ CMakeFiles/Algo.dir/Sources/Sort.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Algo.dir/Sources/Sort.c.s"
 	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\trist\Documents\Perso\Informatique\C\Algo\Sources\Sort.c -o CMakeFiles\Algo.dir\Sources\Sort.c.s
 
-CMakeFiles/Algo.dir/Sources/Structures.c.obj: CMakeFiles/Algo.dir/flags.make
-CMakeFiles/Algo.dir/Sources/Structures.c.obj: ../Sources/Structures.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\trist\Documents\Perso\Informatique\C\Algo\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Algo.dir/Sources/Structures.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Algo.dir\Sources\Structures.c.obj   -c C:\Users\trist\Documents\Perso\Informatique\C\Algo\Sources\Structures.c
+CMakeFiles/Algo.dir/Sources/Structure.c.obj: CMakeFiles/Algo.dir/flags.make
+CMakeFiles/Algo.dir/Sources/Structure.c.obj: ../Sources/Structure.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\trist\Documents\Perso\Informatique\C\Algo\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Algo.dir/Sources/Structure.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Algo.dir\Sources\Structure.c.obj   -c C:\Users\trist\Documents\Perso\Informatique\C\Algo\Sources\Structure.c
 
-CMakeFiles/Algo.dir/Sources/Structures.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Algo.dir/Sources/Structures.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\trist\Documents\Perso\Informatique\C\Algo\Sources\Structures.c > CMakeFiles\Algo.dir\Sources\Structures.c.i
+CMakeFiles/Algo.dir/Sources/Structure.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Algo.dir/Sources/Structure.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\trist\Documents\Perso\Informatique\C\Algo\Sources\Structure.c > CMakeFiles\Algo.dir\Sources\Structure.c.i
 
-CMakeFiles/Algo.dir/Sources/Structures.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Algo.dir/Sources/Structures.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\trist\Documents\Perso\Informatique\C\Algo\Sources\Structures.c -o CMakeFiles\Algo.dir\Sources\Structures.c.s
+CMakeFiles/Algo.dir/Sources/Structure.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Algo.dir/Sources/Structure.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\trist\Documents\Perso\Informatique\C\Algo\Sources\Structure.c -o CMakeFiles\Algo.dir\Sources\Structure.c.s
 
 # Object files for target Algo
 Algo_OBJECTS = \
 "CMakeFiles/Algo.dir/Sources/Sort.c.obj" \
-"CMakeFiles/Algo.dir/Sources/Structures.c.obj"
+"CMakeFiles/Algo.dir/Sources/Structure.c.obj"
 
 # External object files for target Algo
 Algo_EXTERNAL_OBJECTS =
 
 libAlgo.a: CMakeFiles/Algo.dir/Sources/Sort.c.obj
-libAlgo.a: CMakeFiles/Algo.dir/Sources/Structures.c.obj
+libAlgo.a: CMakeFiles/Algo.dir/Sources/Structure.c.obj
 libAlgo.a: CMakeFiles/Algo.dir/build.make
 libAlgo.a: CMakeFiles/Algo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\trist\Documents\Perso\Informatique\C\Algo\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libAlgo.a"
