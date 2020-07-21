@@ -115,33 +115,33 @@ int droite(int i) {
 void entasser_max(struct tas *A, int i) {
     int l = gauche(i);
     int r = droite(i);
-    int max = (l <= A->len && A->data[l - 1] > A->data[i - 1]) ? l : i;
-    if (r <= A->len && A->data[r - 1] > A->data[max - 1])
+    int max = (l <= A->taille && A->data[l - 1] > A->data[i-1]) ? l : i;
+    if (r <= A->taille && A->data[r-1] > A->data[max-1])
         max = r;
     if (max != i) {
-        int data = A->data[i - 1];
-        A->data[i - 1] = A->data[max - 1];
-        A->data[max - 1] = data;
+        int swap = A->data[i-1];
+        A->data[i-1] = A->data[max-1];
+        A->data[max-1] = swap;
         entasser_max(A, max);
     }
 }
 
 void construire_tas_max(struct tas *A) {
-    A->len = A->longueur;
-    for (int i = (A->longueur / 2); i >= 0; i--) {
+    A->taille = A->longueur;
+    for (int i = (A->longueur / 2); i >= 1; i--) {
         entasser_max(A, i);
     }
 }
 
 void tri_par_tas(struct tas *A) {
     construire_tas_max(A);
-    /*for (int i = A->longueur; i >= 2; i--) {
-        int data = A->data[0];
-        A->data[0] = A->data[i - 1];
-        A->data[i - 1] = data;
-        A->len--;
+    for (int i = A->longueur; i >= 2; i--) {
+        int swap = A->data[0];
+        A->data[0] = A->data[i-1];
+        A->data[i-1] = swap;
+        A->taille--;
         entasser_max(A, 1);
-    }*/
+    }
 }
 
 // Quicksort

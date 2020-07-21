@@ -77,10 +77,10 @@ void test_tris(){
     sum = 0;
     init = time(NULL);
     for (int i = 0; i < 100; ++i) {
-        struct tas A = {.len = 10, .longueur = 1};
-        generate_random_tabular(A.data, 10);
+        struct tas A = {.longueur = 1000};
+        generate_random_tabular(A.data, 1000);
         tri_par_tas(&A);
-        sum += verif(A.data, 10);
+        sum += verif(A.data, 1000);
     }
     end = time(NULL);
     printf("Test tri par tas avec %d erreur(s) en %lld secondes \n", 100 - sum, end - init);

@@ -29,7 +29,7 @@ void counting_sort(int A[], int B[], int len);
 
 struct tas {
     int data[1000];
-    int len;
+    int taille;
     int longueur;
 };
 
