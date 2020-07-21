@@ -14,69 +14,79 @@ int verif(const int A[], int len) {
     return 1;
 }
 
-int main(int argc, char *argv[]) {
-    printf("Debut des tests des fonctions de tris \n");
+int generate_random_tabular(int A[], int len){
+    for (int j = 0; j < len; ++j) {
+        A[j] = rand() % 1000;
+    }
+}
+
+void test_tris(){
+    printf(">>> Debut des tests des fonctions de tris \n");
     srand(time(NULL));
     int sum = 0;
     long long int init = time(NULL);
-    /*for (int i = 0; i < 100; ++i) {
-        int tab[10000];
-        for (int j = 0; j < 10000; ++j) {
-            tab[j] = rand() % 10000000;
-        }
-        insertion_sort_increase(tab, 10000);
-        sum += verif(tab, 10000);
-    } */
+    for (int i = 0; i < 100; ++i) {
+        int A[1000];
+        generate_random_tabular(A, 1000);
+        insertion_sort_increase(A, 1000);
+        sum += verif(A, 1000);
+    }
     long long int end = time(NULL);
-    /*printf("Test tri par insertion avec %d erreur(s) en %lld secondes \n", 100 - sum, end - init);
+    printf("Test tri par insertion avec %d erreur(s) en %lld secondes \n", 100 - sum, end - init);
     sum = 0;
     init = time(NULL);
     for (int i = 0; i < 100; ++i) {
-        int tab[10000];
-        for (int j = 0; j < 10000; ++j) {
-            tab[j] = rand() % 10000000;
-        }
-        selection_sort_increase(tab, 10000);
-        sum += verif(tab, 10000);
+        int A[1000];
+        generate_random_tabular(A, 1000);
+        selection_sort_increase(A, 1000);
+        sum += verif(A, 1000);
     }
     end = time(NULL);
     printf("Test tri par selection avec %d erreur(s) en %lld secondes \n", 100 - sum, end - init);
     sum = 0;
     init = time(NULL);
     for (int i = 0; i < 100; ++i) {
-        int tab[10000];
-        for (int j = 0; j < 10000; ++j) {
-            tab[j] = rand() % 10000000;
-        }
-        merge_sort(tab, 0, 9999);
-        sum += verif(tab, 10000);
+        int A[1000];
+        generate_random_tabular(A, 1000);
+        merge_sort(A, 0, 999);
+        sum += verif(A, 1000);
     }
     end = time(NULL);
     printf("Test tri par fusion avec %d erreur(s) en %lld secondes \n", 100 - sum, end - init);
     sum = 0;
     init = time(NULL);
     for (int i = 0; i < 100; ++i) {
-        int tab[10000];
-        for (int j = 0; j < 10000; ++j) {
-            tab[j] = rand() % 10000000;
-        }
-        quick_sort(tab, 0, 9999);
-        sum += verif(tab, 10000);
+        int A[10000];
+        generate_random_tabular(A, 1000);
+        quick_sort(A, 0, 999);
+        sum += verif(A, 1000);
     }
     end = time(NULL);
-    printf("Test tri rapide avec %d erreur(s) en %lld secondes \n", 100 - sum, end - init); */
+    printf("Test tri rapide avec %d erreur(s) en %lld secondes \n", 100 - sum, end - init);
     sum = 0;
     init = time(NULL);
     for (int i = 0; i < 100; ++i) {
-        int tab[100];
-        for (int j = 0; j < 100; ++j) {
-            tab[j] = (rand() % 100) + 3;
-        }
-        int tabB[100];
-        counting_sort(tab, tabB, 100, 200);
-        sum += verif(tabB, 100);
+        int A[1000];
+        int B[1000] = {0};
+        generate_random_tabular(A, 1000);
+        counting_sort(A, B, 1000);
+        sum += verif(B, 1000);
     }
     end = time(NULL);
     printf("Test tri par denombrement avec %d erreur(s) en %lld secondes \n", 100 - sum, end - init);
+    sum = 0;
+    init = time(NULL);
+    for (int i = 0; i < 100; ++i) {
+        struct tas A = {.len = 10, .longueur = 1};
+        generate_random_tabular(A.data, 10);
+        tri_par_tas(&A);
+        sum += verif(A.data, 10);
+    }
+    end = time(NULL);
+    printf("Test tri par tas avec %d erreur(s) en %lld secondes \n", 100 - sum, end - init);
+}
+
+int main(int argc, char *argv[]) {
+    test_tris();
     return 0;
 }

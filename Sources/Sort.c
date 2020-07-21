@@ -100,12 +100,6 @@ void merge_sort(int A[], int s, int e) {
 
 // Tri par tas
 
-struct tas {
-    int data[100];
-    int len;
-    int longueur;
-};
-
 int parent(int i) {
     return i / 2;
 }
@@ -118,39 +112,36 @@ int droite(int i) {
     return 2 * i + 1;
 }
 
-struct tas entasser_max(struct tas A, int i) {
+void entasser_max(struct tas *A, int i) {
     int l = gauche(i);
     int r = droite(i);
-    int max = (l <= A.len && A.data[l - 1] > A.data[i - 1]) ? l : i;
-    if (r <= A.len && A.data[r - 1] > A.data[max - 1])
+    int max = (l <= A->len && A->data[l - 1] > A->data[i - 1]) ? l : i;
+    if (r <= A->len && A->data[r - 1] > A->data[max - 1])
         max = r;
     if (max != i) {
-        int data = A.data[i - 1];
-        A.data[i - 1] = A.data[max - 1];
-        A.data[max - 1] = data;
-        A = entasser_max(A, max);
+        int data = A->data[i - 1];
+        A->data[i - 1] = A->data[max - 1];
+        A->data[max - 1] = data;
+        entasser_max(A, max);
     }
-    return A;
 }
 
-struct tas construire_tas_max(struct tas A) {
-    A.len = A.longueur;
-    for (int i = (A.longueur / 2); i >= 1; i--) {
-        A = entasser_max(A, i);
+void construire_tas_max(struct tas *A) {
+    A->len = A->longueur;
+    for (int i = (A->longueur / 2); i >= 0; i--) {
+        entasser_max(A, i);
     }
-    return A;
 }
 
-struct tas tri_par_tas(struct tas A) {
-    A = construire_tas_max(A);
-    for (int i = A.longueur; i >= 2; i--) {
-        int data = A.data[0];
-        A.data[0] = A.data[i - 1];
-        A.data[i - 1] = data;
-        A.len--;
-        A = entasser_max(A, 1);
-    }
-    return A;
+void tri_par_tas(struct tas *A) {
+    construire_tas_max(A);
+    /*for (int i = A->longueur; i >= 2; i--) {
+        int data = A->data[0];
+        A->data[0] = A->data[i - 1];
+        A->data[i - 1] = data;
+        A->len--;
+        entasser_max(A, 1);
+    }*/
 }
 
 // Quicksort
@@ -183,17 +174,21 @@ void quick_sort(int A[], int p, int r) {
 
 // Tri par dénombrement
 
-void counting_sort(int A[], int B[], int len, int k) {
+void counting_sort(int A[], int B[], int len) {
     // Temps d'execution est Thêta(n)
-    int *C = malloc(sizeof(int) * k);
-    for (int i = 0; i <= k; i++)
-        C[i] = 0;
+    int max;
+    for (int i = 0; i < len; ++i) {
+        if (A[i] > max) max = A[i];
+    }
+    max++;
+    int *C = malloc(sizeof(int) * max);
+    for (int i = 0; i <= max; i++) C[i] = 0;
     for (int i = 0; i < len; i++)
         C[A[i]]++;
-    for (int i = 1; i <= k; i++)
+    for (int i = 1; i <= max; i++)
         C[i] += C[i - 1];
-    for (int i = len; i >= 1; i--) {
-        B[C[A[i]]] = A[i];
+    for (int i = (len - 1); i >= 0; i--) {
+        B[C[A[i]] - 1] = A[i];
         C[A[i]]--;
     }
 }
