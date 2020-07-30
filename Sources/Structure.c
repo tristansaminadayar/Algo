@@ -9,46 +9,52 @@
 
 // Implementation des piles (LIFO)
 
-void stack(struct pile P, int x) {
-    if (P.top > P.len) printf("Débordement positif");
+void stack(struct pile *P, int x) {
+    if (P->top == P->len - 1) printf("Debordement positif \n");
     else {
-        P.top++;
-        P.data[P.top] = x;
+        P->top++;
+        P->data[P->top] = x;
     }
 }
 
-int depilate(struct pile P) {
-    if (P.top == 0) {
-        printf("Débordement négatif");
-        return P.top;
+int depilate(struct pile *P) {
+    if (P->top == -1) {
+        printf("Debordement negatif \n");
+        return P->top;
     } else {
-        P.top--;
-        return P.data[P.top - 1];
+        P->top--;
+        return P->data[P->top + 1];
     }
 }
 
 struct pile create_pile() {
-    struct pile P = {.top = 0, .len = 100};
+    struct pile P = {.top = -1, .len = TAILLE};
     return P;
 }
 
 // Implementation de la file (FIFO)
 
-void enqueue(struct queue Q, int x) {
-    Q.data[Q.bottom] = x;
-    if (Q.bottom == Q.len) Q.bottom = 1;
-    else Q.bottom++;
+void enqueue(struct queue *Q, int x) {
+    if (Q->top == Q->bottom - 1 || (Q->top == Q->len && Q->bottom == 0 )) printf("Debordement positif \n");
+    else {
+        Q->data[Q->top] = x;
+        if (Q->top == Q->len) Q->top = 0;
+        else Q->top++;
+    }
 }
 
-int dequeue(struct queue Q) {
-    int x = Q.data[Q.top];
-    if (Q.top == Q.len) Q.top = 1;
-    else Q.top++;
-    return x;
+int dequeue(struct queue *Q) {
+    if (Q->bottom == Q->top ) printf("Debordement negatif \n");
+    else {
+        int x = Q->data[Q->bottom];
+        if (Q->bottom == Q->len) Q->bottom = 0;
+        else Q->bottom++;
+        return x;
+    }
 }
 
 struct queue create_queue() {
-    struct queue Q = {.top = 0, .bottom = 0, .len = 100};
+    struct queue Q = {.top = 0, .bottom = 0, .len = TAILLE};
     return Q;
 }
 
@@ -59,22 +65,22 @@ struct chained_list create_chained_list() {
     return result;
 }
 
-struct link *chained_list_search(struct chained_list L, int k) {
-    struct link *x = L.nil.next;
+struct link *chained_list_search(struct chained_list *L, int k) {
+    struct link *x = L->nil.next;
     while (x != NULL && x->key != k) x = x->next;
     return x;
 }
 
-void chained_list_insert(struct chained_list L, struct link x) {
-    x.next = L.nil.next;
-    L.nil.next->prev = &x;
-    L.nil.next = &x;
-    x.prev = &(L.nil);
+void chained_list_insert(struct chained_list *L, struct link x) {
+    x.next = L->nil.next;
+    L->nil.next->prev = &x;
+    L->nil.next = &x;
+    x.prev = &(L->nil);
 }
 
-void chained_list_delete(struct chained_list L, struct link x) {
-    x.prev->next = x.next;
-    x.next->prev = x.prev;
+void chained_list_delete(struct chained_list *L, struct link *x) {
+    x->prev->next = x->next;
+    x->next->prev = x->prev;
 }
 
 struct tree create_tree() {

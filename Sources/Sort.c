@@ -1,7 +1,7 @@
 //
 // Created by trist on 17/07/2020.
 //
-// Implementation de certain algorithmes de tris.
+// Implementation de certains algorithmes de tris.
 //
 
 #include "../Headers/Sort.h"

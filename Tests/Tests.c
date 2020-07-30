@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "..\Headers\Sort.h"
+#include "..\Headers\Structure.h"
 #include <stdlib.h>
 #include <time.h>
 
@@ -86,7 +87,49 @@ void test_tris(){
     printf("Test tri par tas avec %d erreur(s) en %lld secondes \n", 100 - sum, end - init);
 }
 
+void test_structure() {
+
+    // Test des piles
+    /*
+    struct pile P = create_pile();
+    stack(&P, 100);
+    stack(&P, 1000);
+    stack(&P, 10000);
+    printf("%d %d %d \n", P.data[0], P.data[1], P.data[2]);
+    printf("%d \n", depilate(&P));
+    printf("%d \n", depilate(&P));
+    printf("%d \n", depilate(&P));
+    */
+    // Test des files
+    /*
+    struct queue Q = create_queue();
+    enqueue(&Q, 10);
+    enqueue(&Q, 100);
+    enqueue(&Q, 1000);
+    enqueue(&Q, 10000);
+    printf("%d %d %d %d \n", Q.data[0], Q.data[1], Q.data[2], Q.data[3]);
+    printf("%d \n", dequeue(&Q));
+    printf("%d \n", dequeue(&Q));
+    printf("%d \n", dequeue(&Q));
+    printf("%d \n", dequeue(&Q));
+    printf("%d \n", dequeue(&Q));
+    */
+    // Test des listes chainées
+
+    struct chained_list L = create_chained_list();
+    struct link item0 = {.key = 10};
+    struct link item1 = {.key = 100};
+    struct link item2 = {.key = 1000};
+    struct link item3 = {.key = 10000};
+    chained_list_insert(&L, item0);
+    chained_list_insert(&L, item1);
+    chained_list_insert(&L, item2);
+    chained_list_insert(&L, item3);
+
+
+}
 int main(int argc, char *argv[]) {
     test_tris();
+    test_structure();
     return 0;
 }
