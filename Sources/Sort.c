@@ -100,28 +100,16 @@ void merge_sort(int A[], int s, int e) {
 
 // Tri par tas
 
-int parent(int i) {
-    return i / 2;
-}
-
-int gauche(int i) {
-    return 2 * i;
-}
-
-int droite(int i) {
-    return 2 * i + 1;
-}
-
 void entasser_max(struct tas *A, int i) {
-    int l = gauche(i);
-    int r = droite(i);
-    int max = (l <= A->taille && A->data[l - 1] > A->data[i-1]) ? l : i;
-    if (r <= A->taille && A->data[r-1] > A->data[max-1])
+    int l = 2 * i;
+    int r = 2 * i + 1;
+    int max = (l <= A->taille && A->data[l - 1] > A->data[i - 1]) ? l : i;
+    if (r <= A->taille && A->data[r - 1] > A->data[max - 1])
         max = r;
     if (max != i) {
-        int swap = A->data[i-1];
-        A->data[i-1] = A->data[max-1];
-        A->data[max-1] = swap;
+        int swap = A->data[i - 1];
+        A->data[i - 1] = A->data[max - 1];
+        A->data[max - 1] = swap;
         entasser_max(A, max);
     }
 }
@@ -137,8 +125,8 @@ void tri_par_tas(struct tas *A) {
     construire_tas_max(A);
     for (int i = A->longueur; i >= 2; i--) {
         int swap = A->data[0];
-        A->data[0] = A->data[i-1];
-        A->data[i-1] = swap;
+        A->data[0] = A->data[i - 1];
+        A->data[i - 1] = swap;
         A->taille--;
         entasser_max(A, 1);
     }
