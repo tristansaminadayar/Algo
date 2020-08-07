@@ -52,9 +52,9 @@ struct chained_list create_chained_list();
 
 struct link *chained_list_search(struct chained_list *L, int k);
 
-void chained_list_insert(struct chained_list *L, struct link x);
+void chained_list_insert(struct chained_list *L, struct link *x);
 
-void chained_list_delete(struct chained_list *L, struct link *x);
+void chained_list_delete(struct link *x);
 
 // Implementation des arbres rouge-noir
 

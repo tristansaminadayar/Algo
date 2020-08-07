@@ -121,10 +121,10 @@ void test_structure() {
     struct link item1 = {.key = 100};
     struct link item2 = {.key = 1000};
     struct link item3 = {.key = 10000};
-    chained_list_insert(&L, item0);
-    chained_list_insert(&L, item1);
-    chained_list_insert(&L, item2);
-    chained_list_insert(&L, item3);
+    chained_list_insert(&L, &item0);
+    chained_list_insert(&L, &item1);
+    chained_list_insert(&L, &item2);
+    chained_list_insert(&L, &item3);
 
 
 }

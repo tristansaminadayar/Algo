@@ -44,7 +44,10 @@ void enqueue(struct queue *Q, int x) {
 }
 
 int dequeue(struct queue *Q) {
-    if (Q->bottom == Q->top ) printf("Debordement negatif \n");
+    if (Q->bottom == Q->top ) {
+        printf("Debordement negatif \n");
+        return Q->len;
+    }
     else {
         int x = Q->data[Q->bottom];
         if (Q->bottom == Q->len) Q->bottom = 0;
@@ -61,8 +64,8 @@ struct queue create_queue() {
 // Implementation des listes chainées
 
 struct chained_list create_chained_list() {
-    struct chained_list result = {.nil = {.prev = result.nil.next, .next = result.nil.prev}};
-    return result;
+    struct chained_list L = {.nil = {.prev = &(L.nil), .next = &(L.nil), .key = -1}};
+    return L;
 }
 
 struct link *chained_list_search(struct chained_list *L, int k) {
@@ -71,14 +74,14 @@ struct link *chained_list_search(struct chained_list *L, int k) {
     return x;
 }
 
-void chained_list_insert(struct chained_list *L, struct link x) {
-    x.next = L->nil.next;
-    L->nil.next->prev = &x;
-    L->nil.next = &x;
-    x.prev = &(L->nil);
+void chained_list_insert(struct chained_list *L, struct link *x) {
+    x->next = L->nil.next;
+    L->nil.next->prev = x;
+    L->nil.next = x;
+    x->prev = &(L->nil);
 }
 
-void chained_list_delete(struct chained_list *L, struct link *x) {
+void chained_list_delete(struct link *x) {
     x->prev->next = x->next;
     x->next->prev = x->prev;
 }
